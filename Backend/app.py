@@ -15,7 +15,7 @@ MURF_API_KEY = os.getenv("MURF_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
 
